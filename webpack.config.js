@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js', //nombre del archivo de origen,
@@ -30,6 +31,9 @@ module.exports = {
     new HtmlWebpackPlugin({
         template: 'src/index.html',
         filename: 'index.html',
-    })
+    }),
+    new CopyPlugin([
+        { from: './src/images', to:'images' }
+      ]),
   ]
 };
