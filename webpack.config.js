@@ -33,7 +33,8 @@ module.exports = {
         filename: 'index.html',
     }),
     new CopyPlugin([
-        { from: './src/images', to:'images' }
-      ]),
+      { from: './src/images', to: 'images' },
+      { from: './src/css', to: 'css' },
+    ]),
   ]
 };
